@@ -2,27 +2,20 @@ from rest_framework import serializers
 
 from core.models import Player
 
-from usuario.serializers import UsuarioSerializer
+from usuario.models import Usuario
+from usuario.serializers import UsuarioSerializer, UsuarioRetrieveSerializer, UsuarioListSerializer
 
 class PlayerSerializer(serializers.ModelSerializer):
-    email = serializers.CharField(write_only = True)
-    password = serializers.CharField(write_only = True)
-    first_name = serializers.CharField(write_only = True)
-    last_name = serializers.CharField(write_only = True)
+    user_details = UsuarioRetrieveSerializer(source='user', read_only=True)
 
     class Meta:
         model = Player
-        fields = ['id_classroom']
-    
-    def create(self, validated_data):
-        classroom = validated_data.pop('id_classroom')
+        fields = ['user_details', 'xp', 'id_classroom']
 
-        user_serializer = UsuarioSerializer(data=validated_data)
-        user_serializer.is_valid(raise_exception=True)
-        user = user_serializer.save()
-        
-        player_data = {"user": user.id, "xp": 0, "id_classroom": classroom}
+class PlayerListSerializer(serializers.ModelSerializer):
+    user_details = UsuarioListSerializer(source='user', read_only=True)
 
-        Player.objects.create(player_data)
-
-        return super().create(validated_data)
+    class Meta:
+        model = Player
+        fields = ['user_details', 'xp', 'id_classroom']
+        depth = 1
