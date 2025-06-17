@@ -21,9 +21,14 @@ from rest_framework.routers import DefaultRouter
 
 from usuario.router import router as usuario_router
 
+from core.views import *
+
 router = DefaultRouter()
+router.register(r'classrooms', ClassroomViewSet)
+router.register(r'players', PlayerViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
     path('api/usuarios/', include(usuario_router.urls))
 ]
