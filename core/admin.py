@@ -4,3 +4,4 @@ from core.models import *
 
 admin.site.register(Classroom)
 admin.site.register(Player)
+admin.site.register(Quiz)
