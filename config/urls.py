@@ -9,6 +9,10 @@ from core.views import *
 
 router = DefaultRouter()
 router.register(r'classrooms', ClassroomViewSet)
+router.register(r'quizzes', QuizViewSet)
+router.register(r'questions', QuestionViewSet)
+router.register(r'playerQuizzes', PlayerQuizViewSet)
+router.register(r'playerQuestions', PlayerQuestionViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
