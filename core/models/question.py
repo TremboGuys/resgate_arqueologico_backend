@@ -10,3 +10,6 @@ class Question(models.Model):
     alternative_d = models.CharField(max_length=120)
     response = models.CharField(max_length=1)
     id_quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name="questions")
+
+    def __str__(self):
+        return self.statement
