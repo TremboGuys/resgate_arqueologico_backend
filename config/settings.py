@@ -28,6 +28,7 @@ SECRET_KEY = 'django-insecure-4-3d4v-0_r62bytw-e1-%*f+(n3ym#alvk)-l_n!4y6rg3+qg$
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'localhost',
     'resgate-arqueologico-backend.onrender.com'
 ]
 
