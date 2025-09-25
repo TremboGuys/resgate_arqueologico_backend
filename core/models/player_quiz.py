@@ -12,4 +12,4 @@ class PlayerQuiz(models.Model):
         verbose_name_plural = "Player Quizzes"
 
     def __str__(self):
-        return f"{self.id_player.user.first_name} - {self.id_quiz.theme}"
+        return f"{self.id_player.username} - {self.id_quiz.theme}"

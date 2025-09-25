@@ -1,3 +1,4 @@
+from .user import UserSerializer
 from .classroom import ClassroomViewSet
 from .player import PlayerViewSet
 from .quiz import QuizViewSet

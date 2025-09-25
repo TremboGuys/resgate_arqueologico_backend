@@ -11,7 +11,7 @@ class PlayerQuestion(models.Model):
     hit = models.BooleanField()
 
     def __str__(self):
-        return f"{self.id_player.user.first_name} {self.id_player.user.last_name} - {self.id_question.statement}"
+        return f"{self.id_player.username} - {self.id_question.statement}"
     
     class Meta:
         verbose_name_plural = "Players Question"
