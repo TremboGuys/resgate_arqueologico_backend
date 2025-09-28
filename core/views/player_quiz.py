@@ -6,3 +6,7 @@ from core.serializers import PlayerQuizSerializer
 class PlayerQuizViewSet(ModelViewSet):
     queryset = PlayerQuiz.objects.all()
     serializer_class = PlayerQuizSerializer
+
+    def create(self, request, *args, **kwargs):
+        print(request.data)
+        return super().create(request, *args, **kwargs)

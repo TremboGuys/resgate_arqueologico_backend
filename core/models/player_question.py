@@ -5,13 +5,13 @@ from .quiz import Quiz
 from .player import Player
 
 class PlayerQuestion(models.Model):
-    id_question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name="players")
-    id_quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name="players_question")
-    id_player = models.ForeignKey(Player, on_delete=models.CASCADE, related_name="questions")
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name="players")
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name="players_question")
+    player = models.ForeignKey(Player, on_delete=models.CASCADE, related_name="questions")
     hit = models.BooleanField()
 
     def __str__(self):
-        return f"{self.id_player.username} - {self.id_question.statement}"
+        return f"{self.player.username} - {self.question.statement}"
     
     class Meta:
         verbose_name_plural = "Players Question"

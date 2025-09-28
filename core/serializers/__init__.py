@@ -1,4 +1,3 @@
-from .user import UserSerializer, UserListSerializer
 from .classroom import ClassroomSerializer
 from .player import PlayerSerializer
 from .quiz import QuizSerializer, QuizRetrieveSerializer

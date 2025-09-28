@@ -8,4 +8,4 @@ class PlayerQuestionViewset(ModelViewSet):
     queryset = PlayerQuestion.objects.all()
     serializer_class = PlayerQuestionSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['id_player', 'id_quiz']
+    filterset_fields = ['player', 'quiz']

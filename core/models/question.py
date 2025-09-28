@@ -9,4 +9,4 @@ class Question(models.Model):
     alternative_c = models.CharField(max_length=120)
     alternative_d = models.CharField(max_length=120)
     response = models.CharField(max_length=1)
-    id_quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name="questions")
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name="questions")
