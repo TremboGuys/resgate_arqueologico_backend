@@ -3,5 +3,5 @@ from core.models import Player
 from core.serializers import PlayerSerializer
 
 class PlayerViewSet(ModelViewSet):
-    queryset = Player.objects.all().order_by("-xp")
+    queryset = Player.objects.all().order_by("-score")
     serializer_class = PlayerSerializer
