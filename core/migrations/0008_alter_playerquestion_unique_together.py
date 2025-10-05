@@ -4,11 +4,6 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
-    dependencies = [
-        ('core', '0007_playerquestion'),
-    ]
-
     operations = [
         migrations.AlterUniqueTogether(
             name='playerquestion',
