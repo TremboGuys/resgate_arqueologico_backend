@@ -4,6 +4,7 @@ from core.models import Quiz
 from .question import QuestionRetrieveSerializer
 
 class QuizSerializer(ModelSerializer):
+    questions = QuestionRetrieveSerializer(many=True, read_only=True)
     class Meta:
         model = Quiz
         fields = "__all__"
