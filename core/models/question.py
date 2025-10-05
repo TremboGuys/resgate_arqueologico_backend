@@ -3,7 +3,7 @@ from django.db import models
 from .quiz import Quiz
 
 class Question(models.Model):
-    statement = models.CharField(max_length=150)
+    statement = models.CharField(max_length=200)
     alternative_a = models.CharField(max_length=120)
     alternative_b = models.CharField(max_length=120)
     alternative_c = models.CharField(max_length=120)

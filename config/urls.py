@@ -9,7 +9,7 @@ router = DefaultRouter()
 router.register(r'classrooms', ClassroomViewSet)
 router.register(r'quizzes', QuizViewSet)
 router.register(r'questions', QuestionViewSet)
-router.register(r'playerQuizzes', PlayerQuizViewSet)
+router.register(r'playerQuizzes', PlayerQuizViewSet, basename="playerQuiz")
 router.register(r'playerQuestions', PlayerQuestionViewset)
 router.register(r'players', PlayerViewSet)
 
