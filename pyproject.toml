@@ -1,0 +1,32 @@
+[project]
+name = "resgate_arqueologico_backend"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Joaovictor23t4", email = "joaovictor239090@gmail.com"},
+]
+dependencies = ["django>=5.2.3", "setuptools>=80.9.0", "djangorestframework>=3.16.0", "django-filter>=25.1", "drf-spectacular>=0.28.0", "dj-database-url>=3.0.1", "psycopg2-binary>=2.9.10", "gunicorn>=23.0.0", "uvicorn>=0.35.0", "whitenoise[brotli]>=6.9.0"]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.scripts]
+
+dev = "python manage.py runserver"
+migrate = "python manage.py migrate"
+makemigrations = "python manage.py makemigrations"
+createsuperuser = "python manage.py createsuperuser"
+shell = "python manage.py shell"
+clean = "find . -name '*.pyc' -delete && find . -name '__pycache__' -exec rm -r {} +"
+test = "python manage.py test"
+lint = "ruff ."
+format = "black ."
+update = "pdm update"
+install = "pdm install"
+post_install = "pdm export --without-hashes --dev --output requirements.txt"
+graph = "python manage.py graph_models -a -o graphviz.png"
+startapp = "python manage.py startapp"
