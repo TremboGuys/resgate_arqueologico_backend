@@ -14,5 +14,5 @@ class PlayerQuestion(models.Model):
         return f"{self.player.username} - {self.question.statement}"
     
     class Meta:
-        unique_together = [('iquestion', 'quiz', 'player', 'hit')]
+        unique_together = [('question', 'quiz', 'player', 'hit')]
         verbose_name_plural = "Players Question"
